@@ -1,0 +1,17 @@
+name: Python en contenedor
+
+on: [push]
+
+jobs:
+  run-python:
+    runs-on: ubuntu-latest
+
+    container:
+      image: python:3.10
+
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v3
+
+      - name: Ejecutar script Python
+        run: python hello.py
